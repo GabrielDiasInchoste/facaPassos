@@ -1,6 +1,6 @@
   </main>
-  <footer class="page-footer font-small cyan darken-3">
-    <div class="footer-copyright text-center py-3 font-weight-bold">© 2021 Copyright: Faca Passos
+  <footer class="page-footer font-small black ">
+    <div class="text-center py-3 font-weight-bold">© 2021 Copyright: Facas Passos
     </div>
 
   </footer>

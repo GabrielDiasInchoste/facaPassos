@@ -9,10 +9,25 @@
     * Ação de listar
     */
     if($acao=="listar"){
-       $sql   = "SELECT * FROM Produto";
+       $sql   = "SELECT p.codProduto, p.nome, sum(s.quantidade) as quantidade, (s.quantidade * s.valorUnitario) as valor
+                FROM Produto p
+                INNER JOIN Sku s
+                ON p.codProduto = s.codProduto
+                INNER JOIN fornecedor f
+                ON f.codFornecedor = s.codFornecedor GROUP by p.codProduto";
        $query = $con->query($sql);
        $registros = $query->fetchAll();
 
+       $sql2   = "select tabela.codProduto, tabela.codSku, sum(tabela.valor) as valor from
+                       (SELECT s.codProduto,
+                        s.codSku,s.quantidade * s.valorUnitario as valor
+                                   from Sku s inner join produto p ON p.codProduto = s.codProduto
+                                   INNER JOIN fornecedor f ON f.codFornecedor = s.codFornecedor
+                                   GROUP by s.codSku)tabela
+                                   group BY tabela.codProduto";
+       $query2 = $con->query($sql2);
+       $skus = $query2->fetchAll();
+       
        require_once '../template/cabecario.php';
        require_once 'lista_produto.php';
        require_once '../template/rodape.php';

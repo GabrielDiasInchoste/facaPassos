@@ -35,31 +35,25 @@
 
   <body>
 
-    <header>
-      <div class="collapse black darken-3" id="navbarHeader">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-8 col-md-7 py-4">
-              <h4 class="text-white">Sobre</h4>
-              <p class="text-white">
-                Aplicação para auxiliar na tarefa de Contole de Materias.
-              </p>
-            </div>
-            <div class="col-sm-4 offset-md-1 py-4">
+    <header style="background-color:#343434">
+      <div class="collapse darken-3" id="navbarHeader" >
+        <div class="container" style="text-align: end">
+            <div class="py-4">
               <h4 class="text-white">Menu</h4>
               <ul class="list-unstyled">
-                <li><a href="<?= BASE_URL; ?>/index.php?acao=sair" class="text-white">Sair</a></li>
-                <li><a href="<?= BASE_URL; ?>/sku/sku.php" class="text-white">Skus</a></li>
-                <li><a href="<?= BASE_URL; ?>/produto/produto.php" class="text-white">Produtos</a></li>
+                <li><a href="<?= BASE_URL; ?>/produto/produto.php" class="text-white">Materiais</a></li>
                 <li><a href="<?= BASE_URL; ?>/fornecedor/fornecedor.php" class="text-white">Fornecedores</a></li>
+                <li><a href="<?= BASE_URL; ?>/sku/sku.php" class="text-white">Skus</a></li>
+                <li><a href="<?= BASE_URL; ?>/index.php?acao=sair" class="text-white">Sair</a></li>
               </ul>
-            </div>
           </div>
         </div>
       </div>
-      <div class="navbar navbar-dark black darken-3 box-shadow">
+      <div class="navbar navbar-dark darken-3 box-shadow">
         <div class="container d-flex justify-content-between">
-          <img src="<?php echo BASE_URL; ?>/template/imagens/logo.png">
+            <a href="<?php echo BASE_URL; ?>/produto/produto.php" class="navbar-brand d-flex align-items-center">
+              <img src="<?php echo BASE_URL; ?>/template/imagens/logo.png" href="<?php echo BASE_URL ?>">
+            </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>

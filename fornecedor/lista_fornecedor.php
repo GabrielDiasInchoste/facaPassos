@@ -1,5 +1,5 @@
 <div class="container">
-  <h2>Fornecedor</h2>
+  <h2><b>Fornecedores</b></h2>
   <a class="btn btn-info" href="fornecedor.php?acao=novo">Novo</a>
   <a class="btn btn-info" href="pdf_fornecedor.php">Gerar Pdf</a>
   <?php if (count($registros)==0): ?>
@@ -37,9 +37,8 @@
             <!-- <td><?php echo $linha['cidade']; ?></td> -->
             <!-- <td><?php echo $linha['estado']; ?></td> -->
             <!-- <td><?php echo $linha['pais']; ?></td> -->
-            <td>
-                <a class="btn btn-info btn-sm" >Informacoes</a>
-                <!-- href="informacao.php?acao=buscar&id=<?php echo $linha['codFornecedor']; ?>" -->
+            <td style="text-align: end">
+                <a class="btn btn-info btn-sm" href="../informacoes/informacoes.php?acao=listar&codFornecedor=<?php echo $linha['codFornecedor']; ?>">Informacoes</a>
                 <a class="btn btn-warning btn-sm" href="fornecedor.php?acao=buscar&id=<?php echo $linha['codFornecedor']; ?>">Editar</a>
             </td>
           </tr>

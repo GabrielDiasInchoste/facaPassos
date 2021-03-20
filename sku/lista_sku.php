@@ -1,5 +1,5 @@
 <div class="container">
-  <h2>Sku</h2>
+  <h2><b>Skus</b></h2>
   <a class="btn btn-info" href="sku.php?acao=novo">Novo</a>
   <a class="btn btn-info" href="pdf_sku.php?codProduto=<?php echo $codProduto;  ?>">Gerar Pdf</a>
 
@@ -25,7 +25,7 @@
             <td><?php echo $linha['produto']; ?></td>
             <td><?php echo $linha['fornecedor']; ?></td>
 
-            <td>
+            <td style="text-align: end">
                 <a class="btn btn-warning btn-sm" href="sku.php?acao=buscar&id=<?php echo $linha['codSku']; ?>">Editar</a>
             </td>
           </tr>

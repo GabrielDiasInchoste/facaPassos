@@ -1,5 +1,5 @@
   </main>
-  <footer class="page-footer font-small black ">
+  <footer class="page-footer font-small" style="background-color:#343434">
     <div class="text-center py-3 font-weight-bold">© 2021 Copyright: Facas Passos
     </div>
 

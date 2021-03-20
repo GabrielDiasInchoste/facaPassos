@@ -21,7 +21,7 @@
           if($query->rowCount()==1){
               $usuario = $query->fetch();
               $_SESSION['logado'] = array("login"=>$usuario['login'], 'codUsuario'=>$usuario['codUsuario']);
-              header('Location: index.php');
+              header('Location: produto/produto.php');
           }else{
               $msg = "Usuário ou senha não conferem";
           }
@@ -45,28 +45,34 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="<?= BASE_URL; ?>/template/mdb.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
-
-    <!-- Custom styles for this template -->
     <link href="./template/signin.css" rel="stylesheet">
   </head>
 
-  <body class="text-center">
-    <form action="login.php" method="post" class="form-signin">
-      <?php if (isset($msg)) { ?>
-        <div class="alert alert-danger" role="alert">
-          <?= $msg; ?>
-        </div>
-      <?php } ?>
-      <h2 class="h3 mb-3 font-weight-normal">Informe seus dados</h1>
-      <label for="inputLogin" class="sr-only">Usuario</label>
-      <input name="login" type="text" id="inputLogin" class="form-control" placeholder="Login" required autofocus>
-      <label for="inputPassword" class="sr-only">Senha</label>
-      <input name="senha" type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
-    </form>
-  <footer class="page-footer font-small cyan darken-3">
-    <div class="footer-copyright text-center py-3">© 2020 Copyright:
-      <p> Faca Passos</p>
+  <body class="text-center" style="background-color:#343434">
+
+    <img style="margin-bottom: 20px" src="<?php echo BASE_URL; ?>/template/imagens/logo.png" href="<?php echo BASE_URL ?>">
+
+    <div class="card" style="padding-left: 5%;padding-right: 5%;width: max-content;margin-left: auto;margin-right: auto">
+      <!-- <div class="card mx-xl-5" style="margin-left: 30rem!important;margin-right: 25rem!important;margin-bottom: 20px"> -->
+
+        <form action="login.php" method="post" >
+          <?php if (isset($msg)) { ?>
+            <div class="alert alert-danger" role="alert">
+              <?= $msg; ?>
+            </div>
+          <?php } ?>
+          <p class="h4 text-center py-4">Login</p>
+          <input name="login" type="text" id="inputLogin" class="form-control" placeholder="Usuario" required>
+          <br>
+          <input name="senha" type="password" id="inputPassword" class="form-control"  placeholder="Senha" required>
+          <div class="text-center py-4 mt-3">
+            <button class="btn " style="background-color:#591F0D;color:#ffffff" type="submit">Entrar<iclass="fa fa-paper-plane-o ml-2"></i></button>
+          </div>
+        </form>
+    </div>
+
+  <footer class="font-small darken-3 " style="color:#ffffff">
+    <div class="footer-copyright text-center py-3">© 2021 Copyright: Facas Passos
     </div>
   </footer>
 </body>

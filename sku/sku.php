@@ -7,27 +7,31 @@
     * Ação de listar
     */
     if($acao=="listar"){
-      if(!isset($_GET['codProduto'])){
-        $codProduto = 0;
-        $sql = "SELECT s.codSku, s.sku, s.quantidade,s.valorUnitario,p.nome as produto, f.nome as fornecedor
-                 FROM Sku s INNER JOIN produto p
-                 ON p.codProduto = s.codProduto
-                 INNER JOIN fornecedor f
-                 ON f.codFornecedor = s.codFornecedor";
-      }else{
+      if(isset($_GET['codProduto'])){
         $codProduto = $_GET['codProduto'];
-
-/** AKI PODE DAR PROBLEMA*/
-
         $sql   = "SELECT s.codSku, s.sku, s.quantidade,s.valorUnitario,p.nome as produto, f.nome as fornecedor
+                   FROM Sku s INNER JOIN produto p
+                   ON p.codProduto = s.codProduto
+                   INNER JOIN fornecedor f
+                   ON f.codFornecedor = s.codFornecedor
+                   WHERE p.codProduto = ".$codProduto;
+    }else if(isset($_GET['codFornecedor'])){
+      $codFornecedor = $_GET['codFornecedor'];
+      $sql   = "SELECT s.codSku, s.sku, s.quantidade,s.valorUnitario,p.nome as produto, f.nome as fornecedor
                  FROM Sku s INNER JOIN produto p
                  ON p.codProduto = s.codProduto
                  INNER JOIN fornecedor f
                  ON f.codFornecedor = s.codFornecedor
-                 WHERE p.codProduto = ".$codProduto;
-    }
+                 WHERE p.codProduto = ".$codFornecedor;
+    } else{
+       $codProduto = 0;
+       $sql = "SELECT s.codSku, s.sku, s.quantidade,s.valorUnitario,p.nome as produto, f.nome as fornecedor
+                 FROM Sku s INNER JOIN produto p
+                 ON p.codProduto = s.codProduto
+                 INNER JOIN fornecedor f
+                 ON f.codFornecedor = s.codFornecedor";
+    };
     $query = $con->query($sql);
-
     $registros = $query->fetchAll();
 
     require_once '../template/cabecario.php';

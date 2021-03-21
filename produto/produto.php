@@ -27,7 +27,7 @@
                                    group BY tabela.codProduto";
        $query2 = $con->query($sql2);
        $skus = $query2->fetchAll();
-       
+
        require_once '../template/cabecario.php';
        require_once 'lista_produto.php';
        require_once '../template/rodape.php';

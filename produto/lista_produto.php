@@ -1,7 +1,16 @@
+
+<?php
+    if(isset($registro)) $acao = "produto.php?acao=atualizar&id=".$registro['codProduto'];
+    else $acao = "produto.php?acao=gravar";
+ ?>
 <div class="container">
   <h2><b>Materiais</b></h2>
+
+  <div>
   <a class="btn btn-info" href="produto.php?acao=novo">Novo</a>
   <a class="btn btn-info" href="pdf_produto.php">Gerar Pdf</a>
+
+  </div>
   <?php if (count($registros)==0): ?>
     <p>Nenhum registro encontrado.</p>
   <?php else: ?>

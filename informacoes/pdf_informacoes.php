@@ -47,7 +47,7 @@ table tfoot td {
 </style>
     <p><b><br>Informacoes do Fornecedor</b></p>
     <?php foreach ($fornecedor as $linha): ?>
-    <table >
+			<table align="center">
       <thead>
           <th>#</th>
           <th>Nome</th>
@@ -60,8 +60,7 @@ table tfoot td {
             <td><?php echo $linha['email']; ?></td>
           </tr>
       </tbody>
-    </table>
-    <table >
+
       <thead>
           <th>Cnpj</th>
           <th>RazaoSocial</th>
@@ -74,8 +73,7 @@ table tfoot td {
             <td><?php echo $linha['telefone']; ?></td>
           </tr>
       </tbody>
-    </table>
-    <table >
+
       <thead>
           <th>Rua</th>
           <th>NumeroRua</th>
@@ -88,8 +86,7 @@ table tfoot td {
             <td><?php echo $linha['complemento']; ?></td>
           </tr>
       </tbody>
-    </table>
-    <table >
+
       <thead>
           <th>Bairro</th>
           <th>Cidade</th>
@@ -127,6 +124,7 @@ table tfoot td {
             <td><?php echo $linha['valorUnitario']; ?></td>
             <td><?php echo $linha['produto']; ?></td>
             <td><?php echo $linha['fornecedor']; ?></td>
+
           </tr>
         <?php endforeach; ?>
       </tbody>

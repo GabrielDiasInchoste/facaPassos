@@ -3,11 +3,11 @@
       <h2><b><?php echo $linha['nome']; ?></b></h2>
   <?php endforeach; ?>
 
-  <a class="btn btn-info" href="pdf_informacoes.php?codFornecedor=<?php echo $linha['codFornecedor']; ?>">Gerar Pdf</a>
+  <!-- <a class="btn btn-info" href="pdf_informacoes.php?codFornecedor=<?php echo $linha['codFornecedor']; ?>">Gerar Pdf</a> -->
   <?php if (count($fornecedor)==0): ?>
     <p>Nenhum registro encontrado.</p>
   <?php else: ?>
-    <p><b><br>Informacoes do Fornecedor</b></p>
+    <b><h4><br>Informacoes do Fornecedor</b></h4>
     <?php foreach ($fornecedor as $linha): ?>
     <table class="table table-hover table-stripped">
       <thead>
@@ -22,8 +22,6 @@
             <td><?php echo $linha['email']; ?></td>
           </tr>
       </tbody>
-    </table>
-    <table class="table table-hover table-stripped">
       <thead>
           <th>Cnpj</th>
           <th>RazaoSocial</th>
@@ -36,8 +34,6 @@
             <td><?php echo $linha['telefone']; ?></td>
           </tr>
       </tbody>
-    </table>
-    <table class="table table-hover table-stripped">
       <thead>
           <th>Rua</th>
           <th>NumeroRua</th>
@@ -50,8 +46,6 @@
             <td><?php echo $linha['complemento']; ?></td>
           </tr>
       </tbody>
-    </table>
-    <table class="table table-hover table-stripped">
       <thead>
           <th>Bairro</th>
           <th>Cidade</th>
@@ -70,7 +64,7 @@
   <?php endforeach; ?>
 <?php endif; ?>
 
-  <p><b><br>Informacoes das Skus</b></p>
+  <h4><b><br>Informacoes das Skus</b></h4>
   <?php if (count($registros)==0): ?>
     <p>Nenhum registro encontrado.</p>
   <?php else: ?>

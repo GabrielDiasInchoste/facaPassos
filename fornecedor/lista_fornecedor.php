@@ -3,12 +3,12 @@
   <a class="btn btn-info" href="fornecedor.php?acao=novo">Novo</a>
   <a class="btn btn-info" href="pdf_fornecedor.php">Gerar Pdf</a>
 
-  <form class="" action="<?php echo $acao; ?>" method="post">
+  <!-- <form class="" action="<?php echo $acao; ?>" method="post">
     <div style="text-align: end">
       <input type="text"  placeholder="Pesquisar por Nome"></input>
       <i class="fa fa-search" style="font-size:24px"></i>
     </div>
-  </form>
+  </form> -->
 
   <?php if (count($registros)==0): ?>
     <p>Nenhum registro encontrado.</p>

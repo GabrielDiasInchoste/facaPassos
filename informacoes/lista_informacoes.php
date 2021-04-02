@@ -3,12 +3,13 @@
       <h3><b><?php echo $linha['nome']; ?></b></h3>
   <?php endforeach; ?>
   <!-- <a class="btn btn-info" href="pdf_informacoes.php?codFornecedor=<?php echo $linha['codFornecedor']; ?>">Gerar Pdf</a> -->
-  <input type="text"  id="filtro" onkeyup="filtroNome()" placeholder="Pesquisar por Nome">
 
   <?php if (count($fornecedor)==0): ?>
     <p>Nenhum registro encontrado.</p>
   <?php else: ?>
     <b><h4><br>Informacoes do Fornecedor</b></h4>
+    <input type="text" class="filtro" id="filtro" onkeyup="filtroNome()" placeholder="Pesquisar por Nome">
+
     <?php foreach ($fornecedor as $linha): ?>
     <table class="table table-hover table-stripped">
       <thead>

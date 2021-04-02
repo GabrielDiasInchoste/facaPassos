@@ -12,7 +12,7 @@
         $sql   = "SELECT s.codSku, s.sku, s.quantidade,s.valorUnitario,p.nome as produto, f.nome as fornecedor
                    FROM Sku s INNER JOIN Produto p
                    ON p.codProduto = s.codProduto
-                   INNER JOIN fornecedor f
+                   INNER JOIN Fornecedor f
                    ON f.codFornecedor = s.codFornecedor
                    WHERE p.codProduto = ".$codProduto;
     }else if(isset($_GET['codFornecedor'])){
@@ -55,7 +55,6 @@
     else if($acao == "gravar"){
         $registro = $_POST;
         print_r($registro);
-        // var_dump($registro);
         $sql = "INSERT INTO Sku(sku,quantidade,valorUnitario,codProduto,codFornecedor) VALUES(:sku,:quantidade,:valorUnitario,:codProduto,:codFornecedor)";
         $query = $con->prepare($sql);
         $result = $query->execute($registro);

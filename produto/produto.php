@@ -21,8 +21,8 @@
        $sql2   = "select tabela.codProduto, tabela.codSku, sum(tabela.valor) as valor from
                        (SELECT s.codProduto,
                         s.codSku,s.quantidade * s.valorUnitario as valor
-                                   from Sku s inner join produto p ON p.codProduto = s.codProduto
-                                   INNER JOIN fornecedor f ON f.codFornecedor = s.codFornecedor
+                                   from Sku s inner join Produto p ON p.codProduto = s.codProduto
+                                   INNER JOIN Fornecedor f ON f.codFornecedor = s.codFornecedor
                                    GROUP by s.codSku)tabela
                                    group BY tabela.codProduto";
        $query2 = $con->query($sql2);

@@ -1,19 +1,13 @@
 <div class="container">
-  <h2><b>Fornecedores</b></h2>
+  <h3><b>Fornecedores</b></h3>
   <a class="btn btn-info" href="fornecedor.php?acao=novo">Novo</a>
   <a class="btn btn-info" href="pdf_fornecedor.php">Gerar Pdf</a>
-
-  <!-- <form class="" action="<?php echo $acao; ?>" method="post">
-    <div style="text-align: end">
-      <input type="text"  placeholder="Pesquisar por Nome"></input>
-      <i class="fa fa-search" style="font-size:24px"></i>
-    </div>
-  </form> -->
+  <input type="text" id="filtro" onkeyup="filtroNome()" placeholder="Pesquisar por Nome">
 
   <?php if (count($registros)==0): ?>
     <p>Nenhum registro encontrado.</p>
   <?php else: ?>
-    <table class="table table-hover table-stripped">
+    <table class="table table-hover table-stripped" id="tabela">
       <thead>
           <th>#</th>
           <th>Nome</th>

@@ -14,8 +14,10 @@
     padding-bottom: calc(var(--jumbotron-padding-y) * 2);
   }
 }
-h2{
+h3{
   text-align: center;
+  margin-top: 3px;
+
 }
 .jumbotron p:last-child {
   margin-bottom: 0;
@@ -48,5 +50,15 @@ footer.page-footer .footer-copyright {
     color: rgba(255, 255, 255, 0.6);
     background-color: rgba(0, 0, 0, 0.2)
 }
-
+#filtro {
+  background-image: url('../template/imagens/icon.png');
+  background-size: 25px;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  float: right;
+  font-size: 14px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
 .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }

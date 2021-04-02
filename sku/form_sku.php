@@ -16,7 +16,7 @@
     </div>
     <div class="from-group">
       <label for="valorUnitario">Valor Unitario</label>
-      <input id="valorUnitario" class="form-control" type="number" name="valorUnitario"
+      <input id="valorUnitario" class="form-control" type="number" step="0.01"name="valorUnitario"
         value="<?php if(isset($registro)) echo $registro['valorUnitario']; ?>" required>
     </div>
     <div class="from-group">
@@ -45,7 +45,7 @@
     </div>
     <br>
     <button class="btn btn-info" type="submit">Enviar</button>
-    <a class="btn btn-danger" href="sku.php?acao=excluir&id=<?php echo $registro['codSku']; ?>">Excluir</a>
+    <a class="btn btn-danger" onclick="delSku(<?php echo $registro['codSku']?>)"> Excluir</a>
 
   </form>
 </div>

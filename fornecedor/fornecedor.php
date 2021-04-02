@@ -31,13 +31,13 @@
         $registro = $_POST;
 
         $sql = "INSERT INTO Fornecedor(nome,email,cnpj,razaoSocial,telefone,rua,numeroRua,complemento,bairro,cidade,estado,pais)
-          	VALUES(:codFornecedor,:nome,:email,:cnpj,:razaoSocial,:telefone,:rua,:numeroRua,:complemento,:bairro,:cidade,:estado,:pais)";
+          	VALUES(:nome,:email,:cnpj,:razaoSocial,:telefone,:rua,:numeroRua,:complemento,:bairro,:cidade,:estado,:pais)";
         $query = $con->prepare($sql);
         $result = $query->execute($registro);
         if($result){
             header('Location: ./fornecedor.php');
         }else{
-            echo "Erro ao tentar inserir o registro";
+            echo "Erro ao tentar inserir o registro ";
         }
     }
     /**

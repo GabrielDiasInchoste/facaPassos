@@ -1,9 +1,10 @@
 <div class="container">
   <?php foreach ($fornecedor as $linha): ?>
-      <h2><b><?php echo $linha['nome']; ?></b></h2>
+      <h3><b><?php echo $linha['nome']; ?></b></h3>
   <?php endforeach; ?>
-
   <!-- <a class="btn btn-info" href="pdf_informacoes.php?codFornecedor=<?php echo $linha['codFornecedor']; ?>">Gerar Pdf</a> -->
+  <input type="text"  id="filtro" onkeyup="filtroNome()" placeholder="Pesquisar por Nome">
+
   <?php if (count($fornecedor)==0): ?>
     <p>Nenhum registro encontrado.</p>
   <?php else: ?>
@@ -69,7 +70,7 @@
     <p>Nenhum registro encontrado.</p>
   <?php else: ?>
 
-    <table class="table table-hover table-stripped">
+    <table class="table table-hover table-stripped" id="tabela">
       <thead>
           <th>#</th>
           <th>Sku</th>

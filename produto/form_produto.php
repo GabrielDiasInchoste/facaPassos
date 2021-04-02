@@ -11,7 +11,7 @@
     </div>
     <br>
     <button class="btn btn-info" type="submit">Enviar</button>
-    <a class="btn btn-danger btn-sm" href="produto.php?acao=excluir&id=<?php echo $linha['codProduto']; ?>">Excluir</a>
+    <a class="btn btn-danger" onclick="delProduto(<?php echo $registro['codProduto']?>)"> Excluir</a>
 
   </form>
 </div>

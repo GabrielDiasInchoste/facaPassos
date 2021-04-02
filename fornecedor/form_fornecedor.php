@@ -56,7 +56,7 @@ else $acao = "fornecedor.php?acao=gravar";
     </div>
     <div class="from-group">
       <label for="estado">Estado</label>
-      <input id="estado" class="form-control" type="text" name="estado"
+      <input id="estado" class="form-control" type="text" name="estado" maxlength="2"
       value="<?php if(isset($registro)) echo $registro['estado']; ?>" required>
     </div>
     <div class="from-group">
@@ -66,7 +66,7 @@ else $acao = "fornecedor.php?acao=gravar";
     </div>
     <br>
     <button class="btn btn-info" type="submit">Enviar</button>
-    <a class="btn btn-danger" href="fornecedor.php?acao=excluir&id=<?php echo $registro['codFornecedor']; ?>">Excluir</a>
+    <a class="btn btn-danger" onclick="delFornecedor(<?php echo $registro['codFornecedor']?>)"> Excluir</a>
 
   </form>
 </div>

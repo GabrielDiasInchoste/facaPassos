@@ -1,12 +1,13 @@
 <div class="container">
-  <h2><b>Skus</b></h2>
+  <h3><b>Skus</b></h3>
   <a class="btn btn-info" href="sku.php?acao=novo">Novo</a>
   <a class="btn btn-info" href="pdf_sku.php?codProduto=<?php echo $codProduto;  ?>">Gerar Pdf</a>
+  <input type="text" id="filtro" onkeyup="filtroNome()" placeholder="Pesquisar por Nome">
 
   <?php if (count($registros)==0): ?>
     <p>Nenhum registro encontrado.</p>
   <?php else: ?>
-    <table class="table table-hover table-stripped">
+    <table class="table table-hover table-stripped" id="tabela">
       <thead>
           <th>#</th>
           <th>Sku</th>

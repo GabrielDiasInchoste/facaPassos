@@ -13,7 +13,7 @@
                 FROM Produto p
                 INNER JOIN Sku s
                 ON p.codProduto = s.codProduto
-                INNER JOIN fornecedor f
+                INNER JOIN Fornecedor f
                 ON f.codFornecedor = s.codFornecedor GROUP by p.codProduto";
        $query = $con->query($sql);
        $registros = $query->fetchAll();
@@ -27,6 +27,12 @@
                                    group BY tabela.codProduto";
        $query2 = $con->query($sql2);
        $skus = $query2->fetchAll();
+
+       $sql3   = "SELECT p.codProduto, p.nome
+                       FROM Produto p
+                       where p.codProduto not IN (SELECT s.codProduto from Sku s)";
+       $query3 = $con->query($sql3);
+       $produtosSemSku = $query3->fetchAll();
 
        require_once '../template/cabecario.php';
        require_once 'lista_produto.php';
@@ -60,7 +66,7 @@
     **/
     else if($acao == "excluir"){
         $id    = $_GET['id'];
-        $sql   = "DELETE FROM produto WHERE codProduto = :id";
+        $sql   = "DELETE FROM Produto WHERE codProduto = :id";
         $query = $con->prepare($sql);
 
         $query->bindParam(':id', $id);
@@ -69,7 +75,7 @@
         if($result){
             header('Location: ./produto.php');
         }else{
-            echo "Erro ao tentar remover o resgitro de id: " . $id;
+            echo "Erro ao tentar remover, verificar se nao existe Skus relacionadas resgitro de id: " .$id;
         }
     }
     /**

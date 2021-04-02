@@ -10,7 +10,7 @@
       if(isset($_GET['codProduto'])){
         $codProduto = $_GET['codProduto'];
         $sql   = "SELECT s.codSku, s.sku, s.quantidade,s.valorUnitario,p.nome as produto, f.nome as fornecedor
-                   FROM Sku s INNER JOIN produto p
+                   FROM Sku s INNER JOIN Produto p
                    ON p.codProduto = s.codProduto
                    INNER JOIN fornecedor f
                    ON f.codFornecedor = s.codFornecedor
@@ -18,15 +18,15 @@
     }else if(isset($_GET['codFornecedor'])){
       $codFornecedor = $_GET['codFornecedor'];
       $sql   = "SELECT s.codSku, s.sku, s.quantidade,s.valorUnitario,p.nome as produto, f.nome as fornecedor
-                 FROM Sku s INNER JOIN produto p
+                 FROM Sku s INNER JOIN Produto p
                  ON p.codProduto = s.codProduto
-                 INNER JOIN fornecedor f
+                 INNER JOIN Fornecedor f
                  ON f.codFornecedor = s.codFornecedor
                  WHERE p.codProduto = ".$codFornecedor;
     } else{
        $codProduto = 0;
        $sql = "SELECT s.codSku, s.sku, s.quantidade,s.valorUnitario,p.nome as produto, f.nome as fornecedor
-                 FROM Sku s INNER JOIN produto p
+                 FROM Sku s INNER JOIN Produto p
                  ON p.codProduto = s.codProduto
                  INNER JOIN fornecedor f
                  ON f.codFornecedor = s.codFornecedor";
@@ -94,7 +94,6 @@
         $query->execute();
         $registro = $query->fetch();
 
-        // var_dump($registro); exit;
         $lista_produto = getProdutos();
         $lista_fornecedor = getFornecedor();
 

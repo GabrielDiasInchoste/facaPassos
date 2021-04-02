@@ -65,7 +65,7 @@ else $acao = "fornecedor.php?acao=gravar";
       value="<?php if(isset($registro)) echo $registro['pais']; ?>" required>
     </div>
     <br>
-    <button class="btn btn-info" type="submit">Enviar</button>
+    <button class="btn btn-info" type="submit">Salvar</button>
     <a class="btn btn-danger" onclick="delFornecedor(<?php echo $registro['codFornecedor']?>)"> Excluir</a>
 
   </form>

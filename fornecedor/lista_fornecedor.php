@@ -2,7 +2,7 @@
   <h3><b>Fornecedores</b></h3>
   <a class="btn btn-info" href="fornecedor.php?acao=novo">Novo</a>
   <a class="btn btn-info" href="pdf_fornecedor.php">Gerar Pdf</a>
-  <input type="text" id="filtro" onkeyup="filtroNome()" placeholder="Pesquisar por Nome">
+  <input type="text" class="filtro" id="filtro" onkeyup="filtroNome()" placeholder="Pesquisar por Nome">
 
   <?php if (count($registros)==0): ?>
     <p>Nenhum registro encontrado.</p>

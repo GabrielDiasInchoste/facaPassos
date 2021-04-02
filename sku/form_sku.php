@@ -44,7 +44,7 @@
       </select>
     </div>
     <br>
-    <button class="btn btn-info" type="submit">Enviar</button>
+    <button class="btn btn-info" type="submit">Salvar</button>
     <a class="btn btn-danger" onclick="delSku(<?php echo $registro['codSku']?>)"> Excluir</a>
 
   </form>

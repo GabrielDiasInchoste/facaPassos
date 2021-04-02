@@ -2,7 +2,7 @@
   <h3><b>Skus</b></h3>
   <a class="btn btn-info" href="sku.php?acao=novo">Novo</a>
   <a class="btn btn-info" href="pdf_sku.php?codProduto=<?php echo $codProduto;  ?>">Gerar Pdf</a>
-  <input type="text" id="filtro" onkeyup="filtroNome()" placeholder="Pesquisar por Nome">
+  <input type="text" class="filtro" id="filtro" onkeyup="filtroNome()" placeholder="Pesquisar por Nome">
 
   <?php if (count($registros)==0): ?>
     <p>Nenhum registro encontrado.</p>
@@ -21,8 +21,8 @@
           <tr>
             <td><?php echo $linha['codSku']; ?></td>
             <td><?php echo $linha['sku']; ?></td>
-            <td><?php echo $linha['quantidade']; ?></td>
-            <td><?php echo $linha['valorUnitario']; ?></td>
+            <td><?php echo number_format(floatval($linha["quantidade"]),2,",","."); ?></td>
+            <td><?php echo number_format(floatval($linha["valorUnitario"]),2,",","."); ?></td>
             <td><?php echo $linha['produto']; ?></td>
             <td><?php echo $linha['fornecedor']; ?></td>
 

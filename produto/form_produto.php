@@ -10,7 +10,7 @@
         value="<?php if(isset($registro)) echo $registro['nome']; ?>" required>
     </div>
     <br>
-    <button class="btn btn-info" type="submit">Enviar</button>
+    <button class="btn btn-info" type="submit">Salvar</button>
     <a class="btn btn-danger" onclick="delProduto(<?php echo $registro['codProduto']?>)"> Excluir</a>
 
   </form>

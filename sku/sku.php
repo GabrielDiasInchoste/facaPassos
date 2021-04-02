@@ -3,9 +3,7 @@
 
     if(!isset($_GET['acao'])) $acao="listar";
     else $acao = $_GET['acao'];
-    /**
-    * Ação de listar
-    */
+
     if($acao=="listar"){
       if(isset($_GET['codProduto'])){
         $codProduto = $_GET['codProduto'];
@@ -38,9 +36,7 @@
     require_once 'lista_sku.php';
     require_once '../template/rodape.php';
   }
-    /**
-    * Ação Novo
-    **/
+
     else if($acao == "novo"){
       $lista_produto = getProdutos();
       $lista_fornecedor = getFornecedor();
@@ -49,9 +45,7 @@
       require_once 'form_sku.php';
       require_once '../template/rodape.php';
     }
-    /**
-    * Ação Gravar
-    **/
+
     else if($acao == "gravar"){
         $registro = $_POST;
         print_r($registro);
@@ -64,12 +58,10 @@
             echo "Erro ao tentar inserir o registro, msg: " . print_r($query->errorInfo());
         }
     }
-    /**
-    * Ação Excluir
-    **/
+
     else if($acao == "excluir"){
         $id    = $_GET['id'];
-        $sql   = "DELETE FROM sku WHERE codSku = :id";
+        $sql   = "DELETE FROM Sku WHERE codSku = :id";
         $query = $con->prepare($sql);
 
         $query->bindParam(':id', $id);
@@ -81,9 +73,7 @@
             echo "Erro ao tentar remover o resgitro de id: " . $id;
         }
     }
-    /**
-    * Ação Excluir
-    **/
+
     else if($acao == "buscar"){
         $id    = $_GET['id'];
         $sql   = "SELECT * FROM Sku WHERE codSku = :id";
@@ -101,9 +91,7 @@
         require_once '../template/rodape.php';
 
     }
-    /**
-    * Ação Atualizar
-    **/
+
     else if($acao == "atualizar"){
         $sql   = "UPDATE Sku SET sku = :sku,quantidade = :quantidade,valorUnitario = :valorUnitario, codProduto = :codProduto, codFornecedor = :codFornecedor WHERE codSku = :id";
         $query = $con->prepare($sql);

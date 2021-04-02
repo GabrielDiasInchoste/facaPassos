@@ -4,9 +4,6 @@
     if(!isset($_GET['acao'])) $acao="listar";
     else $acao = $_GET['acao'];
 
-    /**
-    * Ação de listar
-    */
     if($acao=="listar"){
        $sql   = "SELECT * FROM Fornecedor";
        $query = $con->query($sql);
@@ -16,17 +13,13 @@
        require_once 'lista_fornecedor.php';
        require_once '../template/rodape.php';
     }
-    /**
-    * Ação Novo
-    **/
+
     else if($acao == "novo"){
       require_once '../template/cabecario.php';
       require_once 'form_fornecedor.php';
       require_once '../template/rodape.php';
     }
-    /**
-    * Ação Gravar
-    **/
+
     else if($acao == "gravar"){
         $registro = $_POST;
 
@@ -40,9 +33,7 @@
             echo "Erro ao tentar inserir o registro ";
         }
     }
-    /**
-    * Ação Excluir
-    **/
+
     else if($acao == "excluir"){
         $id    = $_GET['id'];
         $sql   = "DELETE FROM Fornecedor WHERE codFornecedor = :id";
@@ -57,9 +48,7 @@
             echo "Erro ao tentar remover o resgitro de id: " . $id;
         }
     }
-    /**
-    * Ação Excluir
-    **/
+
     else if($acao == "buscar"){
         $id    = $_GET['id'];
         $sql   = "SELECT * FROM Fornecedor WHERE codFornecedor = :id";
@@ -74,9 +63,7 @@
         require_once '../template/rodape.php';
 
     }
-    /**
-    * Ação Atualizar
-    **/
+
     else if($acao == "atualizar"){
         $sql   = "UPDATE Fornecedor SET nome = :nome,email = :email,cnpj = :cnpj,razaoSocial = :razaoSocial,telefone = :telefone,rua = :rua,numeroRua = :numeroRua,complemento = :complemento,
         bairro = :bairro,cidade = :cidade,estado = :estado,pais = :pais WHERE codFornecedor = :id";
@@ -97,7 +84,6 @@
         $query->bindParam(':pais', $_POST['pais']);
 
         $result = $query->execute();
-
         if($result){
             header('Location: ./fornecedor.php');
         }else{

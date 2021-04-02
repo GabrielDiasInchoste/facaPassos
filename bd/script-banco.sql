@@ -4,7 +4,7 @@ create table Fornecedor (
   email VARCHAR(50) not null,
 	cnpj VARCHAR(50) not null,
 	razaoSocial VARCHAR(50) not null,
-	telefone integer not null,
+	telefone BIGINT not null,
 	rua VARCHAR(50) not null,
 	numeroRua integer not null,
 	complemento VARCHAR(50) ,

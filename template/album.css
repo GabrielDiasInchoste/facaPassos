@@ -14,10 +14,18 @@
     padding-bottom: calc(var(--jumbotron-padding-y) * 2);
   }
 }
-h3{
+h5{
   text-align: center;
-  margin-top: 3px;
-
+  margin-top: 25px;
+}
+.menuOpcao{
+  padding-right: 35px;
+  text-align: right;
+  color: #fff;
+  margin: -auto;
+}
+.margin {
+  margin-bottom: 30px;
 }
 .jumbotron p:last-child {
   margin-bottom: 0;
@@ -51,13 +59,11 @@ footer.page-footer .footer-copyright {
     background-color: rgba(0, 0, 0, 0.2)
 }
 .filtro {
-  background-image: url('../template/imagens/icon.png');
-  background-size: 25px;
   background-position: 10px 10px;
   background-repeat: no-repeat;
   float: right;
-  font-size: 14px;
-  padding: 12px 20px 12px 40px;
+  font-size: 10px;
+  padding: 12px 20px 12px 15px;
   border: 1px solid #ddd;
   margin-bottom: 12px;
 }

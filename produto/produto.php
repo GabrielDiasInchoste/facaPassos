@@ -5,9 +5,6 @@
     if(!isset($_GET['acao'])) $acao="listar";
     else $acao = $_GET['acao'];
 
-    /**
-    * Ação de listar
-    */
     if($acao=="listar"){
        $sql   = "SELECT p.codProduto, p.nome, sum(s.quantidade) as quantidade, (s.quantidade * s.valorUnitario) as valor
                 FROM Produto p
@@ -38,17 +35,13 @@
        require_once 'lista_produto.php';
        require_once '../template/rodape.php';
     }
-    /**
-    * Ação Novo
-    **/
+
     else if($acao == "novo"){
       require_once '../template/cabecario.php';
       require_once 'form_produto.php';
       require_once '../template/rodape.php';
     }
-    /**
-    * Ação Gravar
-    **/
+
     else if($acao == "gravar"){
         $registro = $_POST;
 
@@ -61,9 +54,7 @@
             echo "Erro ao tentar inserir o registro";
         }
     }
-    /**
-    * Ação Excluir
-    **/
+
     else if($acao == "excluir"){
         $id    = $_GET['id'];
         $sql   = "DELETE FROM Produto WHERE codProduto = :id";
@@ -78,9 +69,7 @@
             echo "Erro ao tentar remover, verificar se nao existe Skus relacionadas resgitro de id: " .$id;
         }
     }
-    /**
-    * Ação Excluir
-    **/
+
     else if($acao == "buscar"){
         $id    = $_GET['id'];
         $sql   = "SELECT * FROM Produto WHERE codProduto = :id";
@@ -95,9 +84,7 @@
         require_once '../template/rodape.php';
 
     }
-    /**
-    * Ação Atualizar
-    **/
+
     else if($acao == "atualizar"){
         $sql   = "UPDATE Produto SET nome = :nome WHERE codProduto = :id";
         $query = $con->prepare($sql);
@@ -112,5 +99,4 @@
             echo "Erro ao tentar atualizar os dados";
         }
     }
-
  ?>

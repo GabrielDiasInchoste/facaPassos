@@ -1,13 +1,13 @@
 <div class="container">
   <?php foreach ($fornecedor as $linha): ?>
-      <h3><b><?php echo $linha['nome']; ?></b></h3>
+      <h5><b><?php echo $linha['nome']; ?></b></h5>
   <?php endforeach; ?>
   <!-- <a class="btn btn-info" href="pdf_informacoes.php?codFornecedor=<?php echo $linha['codFornecedor']; ?>">Gerar Pdf</a> -->
 
   <?php if (count($fornecedor)==0): ?>
     <p>Nenhum registro encontrado.</p>
   <?php else: ?>
-    <b><h4><br>Informacoes do Fornecedor</b></h4>
+    <b><h6><br>Informações do Fornecedor</b></h6>
     <input type="text" class="filtro" id="filtro" onkeyup="filtroNome()" placeholder="Pesquisar por Nome">
 
     <?php foreach ($fornecedor as $linha): ?>
@@ -26,7 +26,7 @@
       </tbody>
       <thead>
           <th>Cnpj</th>
-          <th>RazaoSocial</th>
+          <th>Razão Social</th>
           <th>Telefone</th>
       </thead>
       <tbody>
@@ -38,7 +38,7 @@
       </tbody>
       <thead>
           <th>Rua</th>
-          <th>NumeroRua</th>
+          <th>Número</th>
           <th>Complemento</th>
       </thead>
       <tbody>
@@ -52,7 +52,7 @@
           <th>Bairro</th>
           <th>Cidade</th>
           <th>Estado</th>
-          <th>Pais</th>
+          <th>País</th>
       </thead>
       <tbody>
           <tr>
@@ -66,7 +66,7 @@
   <?php endforeach; ?>
 <?php endif; ?>
 
-  <h4><b><br>Informacoes das Skus</b></h4>
+  <h6><b><br>Informações das Skus</b></h6>
   <?php if (count($registros)==0): ?>
     <p>Nenhum registro encontrado.</p>
   <?php else: ?>
@@ -76,7 +76,7 @@
           <th>#</th>
           <th>Sku</th>
           <th>Quantidade</th>
-          <th>ValorUnitario</th>
+          <th>Valor Unitário</th>
           <th>Produto</th>
           <th>Fornecedor</th>
       </thead>

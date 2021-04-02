@@ -1,7 +1,7 @@
 <?php
     session_start();
     define('BASE_URL', 'http://gabrieldias.tplinkdns.com:8080/facaPassos');
-    //Finaliza a sessão logado da Aplicação
+
     if(isset($_GET['acao']) && $_GET['acao']=="sair"){
         unset($_SESSION['logado']);
     }
@@ -22,11 +22,8 @@
     <title>Facas Passos</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/album/">
-
-    <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <!-- Custom styles for this template -->
     <link href="<?= BASE_URL; ?>/template/album.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
@@ -37,7 +34,22 @@
 
   <body>
 
+
     <header style="background-color:#343434">
+      <div class="py-4 container ">
+        <a class="menuOpcao"  href="<?php echo BASE_URL; ?>/produto/produto.php" class="navbar-brand d-flex align-items-center">
+          <img src="<?php echo BASE_URL; ?>/template/imagens/logo.png" href="<?php echo BASE_URL ?>">
+        </a>
+        <a class="menuOpcao" style="float: right;padding-top: 15px;" href="<?= BASE_URL; ?>/index.php?acao=sair" class="text-white">Sair</a>
+        <a class="menuOpcao" style="float: right;padding-top: 15px;" href="<?= BASE_URL; ?>/sku/sku.php" class="text-white">Skus</a>
+        <a class="menuOpcao" style="float: right;padding-top: 15px;" href="<?= BASE_URL; ?>/fornecedor/fornecedor.php" class="text-white">Fornecedores</a>
+        <a class="menuOpcao" style="float: right;padding-top: 15px;" href="<?= BASE_URL; ?>/produto/produto.php" class="text-white">Materiais</a>
+      </div>
+
+    </header>
+
+
+    <!-- <header style="background-color:#343434">
       <div class="collapse darken-3" id="navbarHeader" >
         <div class="container" style="text-align: end">
             <div class="py-4">
@@ -61,6 +73,6 @@
           </button>
         </div>
       </div>
-    </header>
+    </header> -->
 
     <main role="main">

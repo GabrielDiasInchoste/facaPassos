@@ -1,7 +1,7 @@
 <div class="container">
-  <h3><b>Skus</b></h3>
+  <h5><b>Skus</b></h5>
   <a class="btn btn-info" href="sku.php?acao=novo">Novo</a>
-  <a class="btn btn-info" href="pdf_sku.php?codProduto=<?php echo $codProduto;  ?>">Gerar Pdf</a>
+  <a class="btn btn-info" href="pdf_sku.php?codProduto=<?php echo $codProduto;  ?>">Relatório</a>
   <input type="text" class="filtro" id="filtro" onkeyup="filtroNome()" placeholder="Pesquisar por Nome">
 
   <?php if (count($registros)==0): ?>
@@ -12,7 +12,7 @@
           <th>#</th>
           <th>Sku</th>
           <th>Quantidade</th>
-          <th>ValorUnitario</th>
+          <th>Valor Unitário</th>
           <th>Produto</th>
           <th>Fornecedor</th>
       </thead>

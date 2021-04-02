@@ -12,7 +12,6 @@
         $query = $con->prepare($sql);
         $query->bindParam('login', $_POST['login']);
 
-        //Colocar a senha como md5 utilizando a função md5()
         if(isset($_POST['login']) && isset($_POST['senha'])){
           $senha = md5($_POST['senha']);
           $query->bindParam('senha', $senha);
@@ -40,8 +39,6 @@
     <title>Login da Aplicação</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
-
-    <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="<?= BASE_URL; ?>/template/mdb.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
@@ -53,8 +50,6 @@
     <img style="margin-bottom: 20px" src="<?php echo BASE_URL; ?>/template/imagens/logo.png" href="<?php echo BASE_URL ?>">
 
     <div class="card" style="padding-left: 5%;padding-right: 5%;width: max-content;margin-left: auto;margin-right: auto">
-      <!-- <div class="card mx-xl-5" style="margin-left: 30rem!important;margin-right: 25rem!important;margin-bottom: 20px"> -->
-
         <form action="login.php" method="post" >
           <?php if (isset($msg)) { ?>
             <div class="alert alert-danger" role="alert">

@@ -4,9 +4,9 @@
     else $acao = "produto.php?acao=gravar";
  ?>
 <div class="container">
-  <h3><b>Materiais Com Sku</b></h3>
+  <h5><b>Materiais Com Sku</b></h5>
   <a class="btn btn-info" href="produto.php?acao=novo">Novo</a>
-  <a class="btn btn-info" href="pdf_produto.php">Gerar Pdf</a>
+  <a class="btn btn-info" href="pdf_produto.php">Relatório</a>
   <input type="text" class="filtro" id="filtro" onkeyup="filtroNome()" placeholder="Pesquisar por Nome">
 
   <?php if (count($registros)==0): ?>
@@ -39,7 +39,7 @@
     </table>
   <?php endif; ?>
 
-  <h3><b>Materiais Sem Sku</b></h3>
+  <h5><b>Materiais Sem Sku</b></h5>
   <input type="text" class="filtro" id="filtro2" onkeyup="filtroNome2()" placeholder="Pesquisar por Nome">
 
   <?php if (count($produtosSemSku)==0): ?>
@@ -56,7 +56,7 @@
             <td><?php echo $linha['codProduto']; ?></td>
             <td><?php echo $linha['nome']; ?></td>
             <td style="text-align: end">
-              <a class="btn btn-info btn-sm" href="../sku/sku.php?acao=novo">Skus</a>
+              <a class="btn btn-info btn-sm" href="../sku/sku.php?acao=novo">Adicionar Sku</a>
               <a class="btn btn-warning btn-sm" href="produto.php?acao=buscar&id=<?php echo $linha['codProduto']; ?>">Editar</a>
             </td>
           </tr>
